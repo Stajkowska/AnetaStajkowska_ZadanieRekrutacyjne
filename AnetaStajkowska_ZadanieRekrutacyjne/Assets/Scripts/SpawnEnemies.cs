@@ -18,10 +18,10 @@ public class SpawnEnemies : MonoBehaviour
     {
         for (int i = 0; i < EnemiesNumber; i++)
         {
-            Instantiate(Spawnable);
+            yield return new WaitForSeconds(5);
+            GameObject child = Instantiate(Spawnable, transform.position, Quaternion.identity);
+            child.transform.SetParent(transform);
         }
-        yield return new WaitForSeconds(1);
-        Debug.Log("Spawn");
     }
 
 

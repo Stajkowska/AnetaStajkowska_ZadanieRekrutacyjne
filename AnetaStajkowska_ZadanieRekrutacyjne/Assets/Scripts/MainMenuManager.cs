@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnStartButtonClick()
     {
-        //change to scene Level1
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
     public void OnSettingsButtonClick()
     {
@@ -34,6 +35,7 @@ public class MainMenuManager : MonoBehaviour
     public void OnExitButtonClick()
     {
         Application.Quit();
+        Debug.Log("Aplication should quit now.");
     }
     public void OnReturnButtonClick()
     {
